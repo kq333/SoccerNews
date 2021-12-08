@@ -1,25 +1,76 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
+import Home from "../views/Home.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/detailsLaLigaTransfersRumors/:id",
+    name: "DetailsLaLigaTransfersRumors",
+    props: true,
+
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../views/DetailsLaLigaTransfersRumors.vue"
+      ),
+  },
+  {
+    path: "/detailsPremierLeagueTransfers/:id",
+    name: "DetailsPremierLeagueTransfers",
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../views/DetailsPremierLeagueTransfers.vue"
+      ),
+    props: true,
+  },
+  {
+    path: "/marketValue",
+    name: "MarketValue",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/MarketValue.vue"),
+  },
+
+  {
+    path: "/liveResults",
+    name: "LiveResults",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/LiveResults.vue"),
+  },
+
+  {
+    path: "/forum",
+    name: "Forum",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Forum.vue"),
+  },
+
+  {
+    path: "/video",
+    name: "Video",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Video.vue"),
+  },
+
+  {
+    path: "/detailsCaruselNews/:id",
+    name: "DetailsCaruselNews",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/DetailsCaruselNews.vue"),
+    props: true,
+  },
+
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
