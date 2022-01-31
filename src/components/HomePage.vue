@@ -134,7 +134,7 @@
         </template>
       </BackgroundTemplate>
     </div>
-    <div class="carusel">
+    <div class="carusel" v-if="newsCaruselHeader>0">
       <BackgroundTemplate>
         <template #header>
           SPOTLIGHT

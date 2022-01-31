@@ -223,6 +223,7 @@ export default createStore({
   };
 
   const data = await axios.request(options)
+  console.log(data)
   commit('newsCarusele',  data.data.arts )
 }
 catch{
